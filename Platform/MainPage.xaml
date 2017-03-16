@@ -7,7 +7,19 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid  Width="1280">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/ws_Forest_1280x720.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
 
+
+        <Button x:Name="PlayButton" Content="Play"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Click="PlayButton_Click" Margin="619,300,502,342" Width="159" Height="78" Background="#FF5D3C0D" BorderBrush="Black" Foreground="#FFB2750B" FontSize="25" FontFamily="Ravie"/>
+        <Button x:Name="ExitButton" Content="Exit"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Click="ExitButton_Click" Margin="619,435,502,207"  Width="159" Height="78" Background="#FF5D3C0D" BorderBrush="Black" Foreground="#FFBD8729" FontSize="25" FontFamily="Ravie"/>
     </Grid>
 </Page>

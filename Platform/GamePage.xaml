@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="Platform.GamePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Platform"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid  Width="1280">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/ws_Forest_1280x720.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+        <Button Content="Back"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Click="Button_Click" Width="81" Height="48" Background="#FF5D3C0D" BorderBrush="Black" Foreground="#FFB2750B" FontSize="15" FontFamily="Ravie"/>
+    </Grid>
+</Page>
