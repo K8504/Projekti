@@ -110,6 +110,8 @@
     <None Include="Platform_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\WoodenExit.png" />
+    <Content Include="Assets\WoodenStart.png" />
     <Content Include="Assets\ws_Forest_1280x720.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

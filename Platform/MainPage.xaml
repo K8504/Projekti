@@ -5,21 +5,27 @@
     xmlns:local="using:Platform"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Width="1280"
+    Height="720">
 
     <Grid  Width="1280">
         <Grid.Background>
-            <ImageBrush ImageSource="/Assets/ws_Forest_1280x720.jpg" Stretch="UniformToFill" />
+            <ImageBrush ImageSource="Assets/ws_Forest_1280x720.jpg" Stretch="UniformToFill" />
         </Grid.Background>
 
 
-        <Button x:Name="PlayButton" Content="Play"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Click="PlayButton_Click" Margin="619,300,502,342" Width="159" Height="78" Background="#FF5D3C0D" BorderBrush="Black" Foreground="#FFB2750B" FontSize="25" FontFamily="Ravie"/>
-        <Button x:Name="ExitButton" Content="Exit"
-                     HorizontalAlignment="Center"
-                     VerticalAlignment="Center"
-                     Click="ExitButton_Click" Margin="619,435,502,207"  Width="159" Height="78" Background="#FF5D3C0D" BorderBrush="Black" Foreground="#FFBD8729" FontSize="25" FontFamily="Ravie"/>
+        <Button x:Name="PlayButton"
+        Click="PlayButton_Click" Width="159" Height="78" BorderBrush="{x:Null}" Margin="588,259,0,383">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets\WoodenStart.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="ExitButton"
+         Click="ExitButton_Click" Width="159" Height="78" BorderBrush="{x:Null}" Margin="588,403,0,239">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets\WoodenExit.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>

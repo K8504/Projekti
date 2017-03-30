@@ -25,12 +25,14 @@ namespace Platform
         public MainPage()
         {
             this.InitializeComponent();
+            
         }
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(GamePage));
         }
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        
+    private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(GamePage));
         }
