@@ -22,10 +22,13 @@ namespace Platform
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+
+
         public MainPage()
         {
             this.InitializeComponent();
-            
+
         }
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {

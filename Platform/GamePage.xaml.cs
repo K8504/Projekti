@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,21 +23,99 @@ namespace Platform
     /// </summary>
     public sealed partial class GamePage : Page
     {
+
+        private Character character;
+
+        // game loop timer
+        private DispatcherTimer timer;
+
+        // canvas width and height
+        private double CanvasWidth;
+        private double CanvasHeight;
+
+        // Which keys are pressed
+        private bool LeftPressed;
+        private bool RightPressed;
+
         public GamePage()
         {
             this.InitializeComponent();
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            // Get root frame ( which show pages)
-            Frame rootFrame = Window.Current.Content as Frame;
-            // Did we get it correctly
-            if (rootFrame == null) return;
-            // Navigate back if possible
-            if (rootFrame.CanGoBack)
+
+
+            // key listeners
+            Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
+            Window.Current.CoreWindow.KeyUp += CoreWindow_KeyUp;
+
+            // get canvas width and height
+            CanvasWidth = MyCanvas.Width;
+            CanvasHeight = MyCanvas.Height;
+
+            // Add character
+            character = new Character
             {
-                rootFrame.GoBack();
+                LocationX = CanvasWidth -1280,
+                LocationY = CanvasHeight -150
+            };
+            MyCanvas.Children.Add(character);
+
+            // game loop 
+            timer = new DispatcherTimer();
+            timer.Tick += Timer_Tick;
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 1000 / 60);
+            timer.Start();
+        }
+
+        /// <summary>
+        /// Game loop.
+        /// </summary>
+        private void Timer_Tick(object sender, object e)
+        {
+            // move 
+            if (LeftPressed) { character.LocationX += 5; }
+            if (RightPressed) { character.LocationX -= 5; }
+
+            // update
+            character.UpdateLocation();
+
+        }
+
+        /// <summary>
+        /// Check if some keys are released.
+        /// </summary>
+        private void CoreWindow_KeyUp(Windows.UI.Core.CoreWindow sender, Windows.UI.Core.KeyEventArgs args)
+        {
+            switch (args.VirtualKey)
+            {
+                case VirtualKey.Left:
+                    LeftPressed = true;
+                    break;
+                case VirtualKey.Right:
+                    RightPressed = true;
+                    break;
+                default:
+                    break;
+            }
+         }
+
+
+        /// <summary>
+        /// Check if some keys are pressed.
+        /// </summary>
+        private void CoreWindow_KeyDown(Windows.UI.Core.CoreWindow sender, Windows.UI.Core.KeyEventArgs args)
+        {
+            switch (args.VirtualKey)
+            {
+                case VirtualKey.Left:
+                    LeftPressed = false;
+                    break;
+                case VirtualKey.Right:
+                    RightPressed = false;
+                    break;
+                default:
+                    break;
             }
         }
-    }
+
+    }   
+    
 }

@@ -9,13 +9,9 @@
     Width="1280"
     Height="720">
 
-    <Grid  Width="1280">
-        <Grid.Background>
-            <ImageBrush ImageSource="/Assets/ws_Forest_1280x720.jpg" Stretch="Fill" />
-        </Grid.Background>
-        <Button Content="Back"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Right"
-                Click="Button_Click" Width="81" Height="48" Background="#FF5D3C0D" BorderBrush="Black" Foreground="#FFB2750B" FontSize="15" FontFamily="Ravie"/>
-    </Grid>
+    <Canvas x:Name="MyCanvas"  Width="1280" Height="720"  HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Canvas.Background>
+            <ImageBrush ImageSource="Assets/ws_Forest_1280x720.jpg"/>
+        </Canvas.Background>
+    </Canvas>
 </Page>
