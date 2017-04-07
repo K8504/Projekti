@@ -71,8 +71,8 @@ namespace Platform
         private void Timer_Tick(object sender, object e)
         {
             // move 
-            if (LeftPressed) { character.LocationX += 5; }
-            if (RightPressed) { character.LocationX -= 5; }
+            if (LeftPressed) { character.LocationX -= 5; }
+            if (RightPressed) { character.LocationX += 5; }
 
             // update
             character.UpdateLocation();
@@ -87,10 +87,10 @@ namespace Platform
             switch (args.VirtualKey)
             {
                 case VirtualKey.Left:
-                    LeftPressed = true;
+                    LeftPressed = false;
                     break;
                 case VirtualKey.Right:
-                    RightPressed = true;
+                    RightPressed = false;
                     break;
                 default:
                     break;
@@ -106,10 +106,10 @@ namespace Platform
             switch (args.VirtualKey)
             {
                 case VirtualKey.Left:
-                    LeftPressed = false;
+                    LeftPressed = true;
                     break;
                 case VirtualKey.Right:
-                    RightPressed = false;
+                    RightPressed = true;
                     break;
                 default:
                     break;
