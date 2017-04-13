@@ -35,10 +35,15 @@ namespace Platform
             Frame.Navigate(typeof(GamePage));
         }
         
-    private void ExitButton_Click(object sender, RoutedEventArgs e)
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(GamePage));
+            //Frame.Navigate(typeof(GamePage));
+            this.Close();
         }
 
+        private void Close()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

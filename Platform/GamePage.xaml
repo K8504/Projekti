@@ -13,5 +13,6 @@
         <Canvas.Background>
             <ImageBrush ImageSource="Assets/ws_Forest_1280x720.jpg"/>
         </Canvas.Background>
+        <Border BorderBrush="Black" BorderThickness="1" Height="720" Width="1280"/>
     </Canvas>
 </Page>
